@@ -1,0 +1,818 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const siteURL = Astro.site?.href || import.meta.env.SITE || 'https://talantongo.com';
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Talantongo",
+  "url": siteURL,
+  "logo": `${siteURL}/logo.png`,
+  "description": "Transform customer interactions into meaningful, measurable value. We help franchises, retailers, and growing brands understand their audience and build systems that nurture them for life.",
+  "foundingDate": "2024",
+  "sameAs": [],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Service"
+  },
+  "areaServed": "Worldwide",
+  "serviceType": [
+    "Customer Relationship Management",
+    "Marketing Automation",
+    "Audience Intelligence",
+    "CRM Modernization",
+    "Lifecycle Marketing"
+  ],
+  "offers": [
+    {
+      "@type": "Service",
+      "name": "Audience Intelligence",
+      "description": "Understand your customer base at a deeper level - their habits, purchase history, loyalty patterns, and engagement moments."
+    },
+    {
+      "@type": "Service",
+      "name": "CRM Modernization",
+      "description": "Build clean, simple, scalable digital systems that help every location stay organized and operate like a unified brand."
+    },
+    {
+      "@type": "Service",
+      "name": "Lifecycle Marketing",
+      "description": "Create message sequences that guide customers through their journey from first visit to long-term loyalty."
+    },
+    {
+      "@type": "Service",
+      "name": "Franchise-Friendly Solutions",
+      "description": "Build structures that work at scale for multi-location brands with unified data and consistent brand experience."
+    }
+  ]
+};
+
+const breadcrumbData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": siteURL
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Talantongo - The Weight of Your Audience Matters"
+  canonicalURL={siteURL}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbData)} />
+  <!-- Hero Section -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-content">
+      <h1 class="hero-title" id="hero-title">Talantongo</h1>
+      <p class="hero-tagline" role="text">The Weight of Your Audience Matters.</p>
+      <p class="hero-description">
+        A modern solution for companies who want to transform scattered customer interactions 
+        into meaningful, measurable, long-lasting value.
+      </p>
+      <p class="hero-description">
+        We help franchises, retailers, and growing brands understand their audience deeply — 
+        and build systems that nurture them for life.
+      </p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Talantongo</h2>
+      <div class="content-grid">
+        <p class="lead">
+          Most companies are sitting on more potential revenue than they realize.
+          Not because they need more customers, but because they don't fully understand 
+          the value of the ones they already have.
+        </p>
+        <p>
+          <strong>Talantongo</strong> was created with a simple belief:
+        </p>
+        <p class="highlight">
+          Every audience carries weight — and when you learn how to measure it, you learn how to grow.
+        </p>
+        <p>
+          With years of experience inside companies that raised capital, scaled nationally, 
+          and pulled real revenue from engaged communities, we've seen a consistent pattern:
+        </p>
+        <p class="insight">
+          Businesses don't fall behind because of their product...<br/>
+          They fall behind because they stop talking to the customers who already believed in them.
+        </p>
+        <p>
+          <strong>Talantongo</strong> exists to change that.<br/>
+          We help brands modernize their customer systems, digitize their operations, 
+          and build marketing strategies that feel personal, intentional, and data-driven.
+        </p>
+        <p class="tagline">
+          No gimmicks — just the right message, delivered at the right moment, to the right person.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section services-section" aria-labelledby="services-title">
+    <div class="container">
+      <h2 class="section-title" id="services-title">What We Do</h2>
+      <div class="services-grid" role="list">
+        <article class="service-card" role="listitem">
+          <h3>Audience Intelligence</h3>
+          <p>
+            We help you understand your customer base at a deeper level - their habits, 
+            their purchase history, their loyalty patterns, and the moments where engagement 
+            naturally falls off.
+          </p>
+          <p>
+            From there, we design systems to keep customers connected and coming back.
+          </p>
+        </div>
+
+        <article class="service-card" role="listitem">
+          <h3>CRM Modernization</h3>
+          <p>
+            Whether you're still using paper files or outdated software, we build clean, 
+            simple, scalable digital systems that help every location stay organized and 
+            operate like a unified brand.
+          </p>
+        </article>
+
+        <article class="service-card" role="listitem">
+          <h3>Lifecycle Marketing</h3>
+          <p>
+            We create message sequences that guide customers through their journey - from 
+            first visit to long-term loyalty - focusing on retention, reactivation, and 
+            revenue consistency.
+          </p>
+        </article>
+
+        <article class="service-card" role="listitem">
+          <h3>Franchise-Friendly Solutions</h3>
+          <p>For multi-location brands, we build structures that work at scale:</p>
+          <ul>
+            <li>unified data</li>
+            <li>local store flexibility</li>
+            <li>automated follow-ups</li>
+            <li>consistent brand experience</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section id="philosophy" class="section philosophy-section">
+    <div class="container">
+      <h2 class="section-title">Our Philosophy</h2>
+      <div class="philosophy-grid">
+        <div class="philosophy-item">
+          <h3>Every customer counts.</h3>
+          <p>
+            Whether they purchase once or return every week, every individual adds weight 
+            to the future of your business.
+          </p>
+        </div>
+
+        <div class="philosophy-item">
+          <h3>Engagement creates loyalty.</h3>
+          <p>
+            Customers don't drift away because they stop caring - they drift because they 
+            stop hearing from you.
+          </p>
+        </div>
+
+        <div class="philosophy-item">
+          <h3>Technology should make things clearer, not more complicated.</h3>
+          <p>
+            We focus on systems that your team will actually use.
+          </p>
+        </div>
+
+        <div class="philosophy-item">
+          <h3>Growth comes from stewardship.</h3>
+          <p>
+            Your audience is an asset — one that gains value when nurtured intentionally.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section id="values" class="section values-section">
+    <div class="container">
+      <h2 class="section-title">Our Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>1. Stewardship</h3>
+          <p>
+            We believe in managing your audience with the same care you put into your product.
+            Good stewardship creates predictable, dependable growth.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h3>2. Clarity</h3>
+          <p>
+            No noise, no clutter, no overwhelming dashboards.
+            Just simple systems that give you a clear view of your customers and your revenue.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h3>3. Integrity</h3>
+          <p>
+            We don't overpromise or inflate expectations.
+            We build sustainable models that help businesses grow with honesty and transparency.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h3>4. Humanity</h3>
+          <p>
+            Data is powerful, but people make the decisions.
+            We use technology to deepen human connection, not replace it.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h3>5. Consistency</h3>
+          <p>
+            Long-term success comes from consistent engagement.
+            We help brands show up for their audience - regularly, reliably, and meaningfully.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Serve Section -->
+  <section class="section serve-section">
+    <div class="container">
+      <h2 class="section-title">Who We Serve</h2>
+      <div class="serve-list">
+        <ul>
+          <li>Franchise organizations</li>
+          <li>Retail clinics</li>
+          <li>Supplement & wellness brands</li>
+          <li>Membership-based businesses</li>
+          <li>High-touch retail focused on return clientele</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Makes Us Different Section -->
+  <section class="section different-section">
+    <div class="container">
+      <h2 class="section-title">What Makes Us Different</h2>
+      <div class="different-content">
+        <p class="lead">
+          We don't sell software.<br/>
+          We don't rely on cookie-cutter campaigns.<br/>
+          We don't overwhelm your stores with complicated tools they'll never use.
+        </p>
+        <p class="focus-title">Instead, we focus on:</p>
+        <ul class="focus-list">
+          <li>Customer understanding</li>
+          <li>Operational modernization</li>
+          <li>Intelligent communication</li>
+          <li>Revenue-focused strategy</li>
+        </ul>
+        <p class="goal">
+          Our goal is simple:<br/>
+          <strong>Help you pull maximum value from the audience you already paid to earn.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--yellow) 0%, var(--orange-light) 40%, var(--orange-dark) 100%);
+    padding: 8rem 2rem 7rem;
+    text-align: center;
+    color: var(--text-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.25) 0%, transparent 60%),
+      radial-gradient(circle at 80% 70%, rgba(255, 69, 0, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    max-width: 850px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.04em;
+    color: var(--text-dark);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    line-height: 1.1;
+  }
+
+  .hero-tagline {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    color: var(--text-dark);
+    letter-spacing: -0.02em;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-dark);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+  }
+
+  .section {
+    padding: 6rem 2rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--orange-dark) 0%, var(--orange-light) 50%, var(--yellow) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+  }
+
+  .content-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--gray-700);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .lead {
+    font-size: 1.375rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.7;
+  }
+
+  .highlight {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    padding: 2rem 2.5rem;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.25) 0%, rgba(255, 140, 0, 0.25) 100%);
+    border-left: 4px solid var(--orange-dark);
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.15);
+  }
+
+  .insight {
+    font-size: 1.1875rem;
+    font-style: italic;
+    color: var(--text-dark);
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 140, 0, 0.15) 100%);
+    border-radius: 12px;
+    border-left: 3px solid var(--orange-light);
+    margin: 1rem 0;
+  }
+
+  .tagline {
+    font-size: 1.1875rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 2rem 2.5rem;
+    background: linear-gradient(135deg, var(--yellow) 0%, var(--orange-light) 100%);
+    border-radius: 16px;
+    color: var(--text-dark);
+    margin-top: 2rem;
+    box-shadow: 0 4px 16px rgba(255, 140, 0, 0.2);
+  }
+
+  .services-section {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(255, 140, 0, 0.08) 50%, rgba(255, 69, 0, 0.08) 100%);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .service-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 231, 0.95) 100%);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 140, 0, 0.2);
+    border-top: 3px solid var(--orange-dark);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(255, 69, 0, 0.25), 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 140, 0, 0.4);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 248, 231, 1) 100%);
+  }
+
+  .service-card h3 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    color: var(--orange-dark);
+    letter-spacing: -0.02em;
+  }
+
+  .service-card p {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    color: var(--text-dark);
+    font-size: 0.9375rem;
+  }
+
+  .service-card ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .service-card li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .service-card li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--orange-dark);
+    font-weight: bold;
+  }
+
+  .philosophy-section {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 248, 231, 0.8) 50%, rgba(255, 240, 220, 0.5) 100%);
+  }
+
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .philosophy-item {
+    padding: 2.5rem;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 140, 0, 0.2) 100%);
+    border-radius: 16px;
+    border-left: 4px solid var(--orange-dark);
+    border: 1px solid rgba(255, 140, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.15);
+    transition: all 0.3s ease;
+  }
+
+  .philosophy-item:hover {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.3) 0%, rgba(255, 140, 0, 0.3) 100%);
+    border-color: rgba(255, 140, 0, 0.5);
+    transform: translateX(4px);
+    box-shadow: 0 6px 16px rgba(255, 140, 0, 0.25);
+  }
+
+  .philosophy-item h3 {
+    font-size: 1.3125rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--orange-dark);
+    letter-spacing: -0.02em;
+  }
+
+  .philosophy-item p {
+    line-height: 1.75;
+    color: var(--text-dark);
+    font-size: 0.9375rem;
+  }
+
+  .values-section {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(255, 140, 0, 0.08) 50%, rgba(255, 69, 0, 0.08) 100%);
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .value-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 231, 0.95) 100%);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 140, 0, 0.2);
+    border-top: 3px solid var(--orange-light);
+  }
+
+  .value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(255, 69, 0, 0.25), 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 140, 0, 0.4);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 248, 231, 1) 100%);
+  }
+
+  .value-card h3 {
+    font-size: 1.3125rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    color: var(--orange-dark);
+    letter-spacing: -0.02em;
+  }
+
+  .value-card p {
+    line-height: 1.75;
+    color: var(--text-dark);
+    font-size: 0.9375rem;
+  }
+
+  .serve-section {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 248, 231, 0.8) 50%, rgba(255, 240, 220, 0.5) 100%);
+  }
+
+  .serve-list {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .serve-list ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .serve-list li {
+    padding: 1.25rem 2rem;
+    margin: 0.875rem 0;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 140, 0, 0.2) 100%);
+    border-radius: 12px;
+    border-left: 3px solid var(--orange-dark);
+    font-size: 1.0625rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: var(--text-dark);
+    border: 1px solid rgba(255, 140, 0, 0.3);
+    box-shadow: 0 2px 8px rgba(255, 140, 0, 0.1);
+  }
+
+  .serve-list li:hover {
+    transform: translateX(8px);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.3) 0%, rgba(255, 140, 0, 0.3) 100%);
+    border-color: rgba(255, 140, 0, 0.5);
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.2);
+  }
+
+  .different-section {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(255, 140, 0, 0.08) 50%, rgba(255, 69, 0, 0.08) 100%);
+  }
+
+  .different-content {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .different-content .lead {
+    font-size: 1.3125rem;
+    margin-bottom: 3rem;
+    line-height: 1.75;
+    color: var(--text-dark);
+  }
+
+  .focus-title {
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin: 3rem 0 2rem 0;
+    color: var(--orange-dark);
+    letter-spacing: -0.02em;
+  }
+
+  .focus-list {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 3rem;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .focus-list li {
+    padding: 1rem 1.75rem;
+    margin: 0.75rem 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 231, 0.95) 100%);
+    border-radius: 12px;
+    border-left: 3px solid var(--orange-dark);
+    font-size: 1.0625rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    border: 1px solid rgba(255, 140, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(255, 140, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .focus-list li:hover {
+    border-color: rgba(255, 140, 0, 0.4);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 140, 0, 0.2) 100%);
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.2);
+  }
+
+  .goal {
+    font-size: 1.25rem;
+    line-height: 1.75;
+    padding: 2.5rem 3rem;
+    background: linear-gradient(135deg, var(--yellow) 0%, var(--orange-light) 100%);
+    border-radius: 16px;
+    color: var(--text-dark);
+    box-shadow: 0 6px 20px rgba(255, 140, 0, 0.25);
+  }
+
+  .goal strong {
+    font-size: 1.375rem;
+    color: var(--text-dark);
+    font-weight: 700;
+    display: block;
+    margin-top: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 5rem 1.5rem 4rem;
+    }
+
+    .hero-title {
+      font-size: 2.75rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.0625rem;
+    }
+
+    .section {
+      padding: 4rem 1.5rem;
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      margin-bottom: 3rem;
+    }
+
+    .services-grid,
+    .philosophy-grid,
+    .values-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .service-card,
+    .value-card,
+    .philosophy-item {
+      padding: 2rem;
+    }
+
+    .content-grid {
+      gap: 1.5rem;
+    }
+
+    .highlight {
+      padding: 1.5rem;
+      font-size: 1.3125rem;
+    }
+
+    .goal {
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding: 4rem 1rem 3rem;
+    }
+
+    .hero-title {
+      font-size: 2.25rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.25rem;
+    }
+
+    .hero-description {
+      font-size: 1rem;
+    }
+
+    .section {
+      padding: 3rem 1rem;
+    }
+
+    .section-title {
+      font-size: 1.875rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .service-card,
+    .value-card,
+    .philosophy-item {
+      padding: 1.5rem;
+    }
+
+    .content-grid {
+      font-size: 1rem;
+    }
+
+    .highlight {
+      padding: 1.25rem;
+      font-size: 1.1875rem;
+    }
+
+    .tagline {
+      padding: 1.5rem;
+      font-size: 1.0625rem;
+    }
+
+    .goal {
+      padding: 1.5rem;
+      font-size: 1.125rem;
+    }
+
+    .goal strong {
+      font-size: 1.25rem;
+    }
+  }
+
+  /* Improve touch targets on mobile */
+  @media (pointer: coarse) {
+    .service-card,
+    .value-card,
+    .philosophy-item {
+      min-height: 120px;
+    }
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+
+

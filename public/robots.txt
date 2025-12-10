@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://talantongo.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
