@@ -5,7 +5,7 @@ const siteURL = Astro.site?.href || import.meta.env.SITE || 'https://talantongo.
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Talantongo",
+  "name": "Talanton Go",
   "url": siteURL,
   "logo": `${siteURL}/logo.png`,
   "description": "Transform customer interactions into meaningful, measurable value. We help franchises, retailers, and growing brands understand their audience and build systems that nurture them for life.",
@@ -62,7 +62,7 @@ const breadcrumbData = {
 ---
 
 <Layout 
-  title="Talantongo - The Weight of Your Audience Matters"
+  title="Talanton Go - The Weight of Your Audience Matters"
   canonicalURL={siteURL}
 >
   <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
@@ -70,23 +70,26 @@ const breadcrumbData = {
   <!-- Hero Section -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-content">
-      <h1 class="hero-title" id="hero-title">Talantongo</h1>
+      <h1 class="hero-title" id="hero-title">Talanton <span class="hero-go">Go</span></h1>
       <p class="hero-tagline" role="text">The Weight of Your Audience Matters.</p>
       <p class="hero-description">
-        A modern solution for companies who want to transform scattered customer interactions 
-        into meaningful, measurable, long-lasting value.
+        <strong>A modern solution for companies who want to transform scattered customer interactions 
+        into meaningful, measurable, long-lasting value.</strong>
       </p>
       <p class="hero-description">
-        We help franchises, retailers, and growing brands understand their audience deeply — 
-        and build systems that nurture them for life.
+        <strong>We help franchises, retailers, and growing brands understand their audience deeply — 
+        and build systems that nurture them for life.</strong>
       </p>
+      <a href="#contact" class="cta-button">Get Started</a>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="section">
+  <section id="about" class="section about-section">
     <div class="container">
-      <h2 class="section-title">About Talantongo</h2>
+      <h2 class="section-title about-title">
+        <span class="about-label">About</span> <span class="about-brand">Talanton Go</span>
+      </h2>
       <div class="content-grid">
         <p class="lead">
           Most companies are sitting on more potential revenue than they realize.
@@ -94,7 +97,7 @@ const breadcrumbData = {
           the value of the ones they already have.
         </p>
         <p>
-          <strong>Talantongo</strong> was created with a simple belief:
+          <strong>Talanton Go</strong> was created with a simple belief:
         </p>
         <p class="highlight">
           Every audience carries weight — and when you learn how to measure it, you learn how to grow.
@@ -108,7 +111,7 @@ const breadcrumbData = {
           They fall behind because they stop talking to the customers who already believed in them.
         </p>
         <p>
-          <strong>Talantongo</strong> exists to change that.<br/>
+          <strong>Talanton Go</strong> exists to change that.<br/>
           We help brands modernize their customer systems, digitize their operations, 
           and build marketing strategies that feel personal, intentional, and data-driven.
         </p>
@@ -294,14 +297,57 @@ const breadcrumbData = {
       </div>
     </div>
   </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <h2 class="section-title contact-title">Contact Us</h2>
+      <div class="contact-content">
+        <p class="contact-intro">
+          Ready to transform your customer relationships? Get in touch with us.
+        </p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <h3>Email</h3>
+            <a href="mailto:hello@talantongo.com" class="contact-link">
+              hello@talantongo.com
+            </a>
+          </div>
+          <div class="contact-item">
+            <h3>Phone</h3>
+            <a href="tel:+1234567890" class="contact-link">
+              (123) 456-7890
+            </a>
+          </div>
+          <div class="contact-item">
+            <h3>Schedule a Meeting</h3>
+            <p class="contact-note">Calendar booking coming soon</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
+  :root {
+    /* The New "Professional" Background */
+    --bg-hero: #1F1520; /* Deep Warm Aubergine */
+    
+    /* The "Sunset" Accent Gradient */
+    --gradient-sunset: linear-gradient(135deg, #FFD700 0%, #FF4500 100%);
+    
+    /* Text Colors */
+    --text-light: #F8FAFC; /* For use on dark background */
+    --text-dark: #334155;  /* For use on White background */
+    --text-brand: #F97316; /* Solid Orange Accent */
+  }
+
   .hero {
-    background: linear-gradient(135deg, var(--yellow) 0%, var(--orange-light) 40%, var(--orange-dark) 100%);
+    background: var(--bg-hero);
     padding: 8rem 2rem 7rem;
     text-align: center;
-    color: var(--text-dark);
+    color: var(--text-light);
     position: relative;
     overflow: hidden;
   }
@@ -314,8 +360,8 @@ const breadcrumbData = {
     right: 0;
     bottom: 0;
     background: 
-      radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.25) 0%, transparent 60%),
-      radial-gradient(circle at 80% 70%, rgba(255, 69, 0, 0.2) 0%, transparent 50%);
+      radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.08) 0%, transparent 60%),
+      radial-gradient(circle at 80% 70%, rgba(255, 69, 0, 0.06) 0%, transparent 50%);
     pointer-events: none;
   }
 
@@ -331,18 +377,26 @@ const breadcrumbData = {
     font-weight: 800;
     margin-bottom: 1.5rem;
     letter-spacing: -0.04em;
-    color: var(--text-dark);
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    background: var(--gradient-sunset);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     line-height: 1.1;
+  }
+
+  .hero-go {
+    background: var(--gradient-sunset);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .hero-tagline {
     font-size: 1.75rem;
     font-weight: 600;
     margin-bottom: 2.5rem;
-    color: var(--text-dark);
+    color: var(--text-light);
     letter-spacing: -0.02em;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
   }
 
   .hero-description {
@@ -352,12 +406,36 @@ const breadcrumbData = {
     max-width: 750px;
     margin-left: auto;
     margin-right: auto;
-    color: var(--text-dark);
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+    color: rgba(248, 250, 252, 0.9);
+    font-weight: 400;
+  }
+
+  .cta-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    background: var(--gradient-sunset);
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.125rem;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 69, 0, 0.4);
   }
 
   .section {
     padding: 6rem 2rem;
+  }
+
+  .about-section {
+    padding-top: 8rem;
+    padding-bottom: 6rem;
   }
 
   .container {
@@ -370,12 +448,27 @@ const breadcrumbData = {
     font-weight: 700;
     margin-bottom: 4rem;
     text-align: center;
-    background: linear-gradient(135deg, var(--orange-dark) 0%, var(--orange-light) 50%, var(--yellow) 100%);
+    background: linear-gradient(135deg, var(--orange-dark) 0%, var(--orange-light) 30%, var(--silver-dark) 60%, var(--yellow) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     letter-spacing: -0.03em;
     line-height: 1.2;
+  }
+
+  .about-title {
+    background: none;
+    -webkit-text-fill-color: initial;
+  }
+
+  .about-label {
+    color: #334155;
+    font-weight: 700;
+  }
+
+  .about-brand {
+    color: #F97316;
+    font-weight: 700;
   }
 
   .content-grid {
@@ -384,9 +477,10 @@ const breadcrumbData = {
     gap: 2rem;
     font-size: 1.0625rem;
     line-height: 1.8;
-    color: var(--gray-700);
+    color: var(--text-dark);
     max-width: 900px;
     margin: 0 auto;
+    font-weight: 400;
   }
 
   .lead {
@@ -398,10 +492,10 @@ const breadcrumbData = {
 
   .highlight {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text-dark);
     padding: 2rem 2.5rem;
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.25) 0%, rgba(255, 140, 0, 0.25) 100%);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 140, 0, 0.2) 50%, rgba(192, 192, 192, 0.15) 100%);
     border-left: 4px solid var(--orange-dark);
     border-radius: 12px;
     margin: 1.5rem 0;
@@ -415,10 +509,11 @@ const breadcrumbData = {
     font-style: italic;
     color: var(--text-dark);
     padding: 1.5rem 2rem;
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 140, 0, 0.15) 100%);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.12) 0%, rgba(255, 140, 0, 0.12) 50%, rgba(192, 192, 192, 0.1) 100%);
     border-radius: 12px;
     border-left: 3px solid var(--orange-light);
     margin: 1rem 0;
+    font-weight: 400;
   }
 
   .tagline {
@@ -426,7 +521,7 @@ const breadcrumbData = {
     font-weight: 500;
     text-align: center;
     padding: 2rem 2.5rem;
-    background: linear-gradient(135deg, var(--yellow) 0%, var(--orange-light) 100%);
+    background: linear-gradient(135deg, var(--yellow) 0%, var(--orange-light) 50%, var(--silver-light) 100%);
     border-radius: 16px;
     color: var(--text-dark);
     margin-top: 2rem;
@@ -434,7 +529,7 @@ const breadcrumbData = {
   }
 
   .services-section {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(255, 140, 0, 0.08) 50%, rgba(255, 69, 0, 0.08) 100%);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.06) 0%, rgba(255, 140, 0, 0.06) 30%, rgba(192, 192, 192, 0.05) 70%, rgba(255, 69, 0, 0.06) 100%);
   }
 
   .services-grid {
@@ -444,11 +539,11 @@ const breadcrumbData = {
   }
 
   .service-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 231, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 231, 0.9) 50%, rgba(232, 232, 232, 0.9) 100%);
     padding: 2.5rem;
     border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 140, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(192, 192, 192, 0.3);
     border-top: 3px solid var(--orange-dark);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -473,6 +568,7 @@ const breadcrumbData = {
     line-height: 1.75;
     color: var(--text-dark);
     font-size: 0.9375rem;
+    font-weight: 400;
   }
 
   .service-card ul {
@@ -495,7 +591,7 @@ const breadcrumbData = {
   }
 
   .philosophy-section {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 248, 231, 0.8) 50%, rgba(255, 240, 220, 0.5) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 248, 231, 0.6) 30%, rgba(232, 232, 232, 0.6) 70%, rgba(255, 240, 220, 0.5) 100%);
   }
 
   .philosophy-grid {
@@ -506,11 +602,11 @@ const breadcrumbData = {
 
   .philosophy-item {
     padding: 2.5rem;
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 140, 0, 0.2) 100%);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 140, 0, 0.15) 50%, rgba(192, 192, 192, 0.12) 100%);
     border-radius: 16px;
     border-left: 4px solid var(--orange-dark);
-    border: 1px solid rgba(255, 140, 0, 0.3);
-    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.15);
+    border: 1px solid rgba(192, 192, 192, 0.4);
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.12);
     transition: all 0.3s ease;
   }
 
@@ -533,10 +629,11 @@ const breadcrumbData = {
     line-height: 1.75;
     color: var(--text-dark);
     font-size: 0.9375rem;
+    font-weight: 400;
   }
 
   .values-section {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(255, 140, 0, 0.08) 50%, rgba(255, 69, 0, 0.08) 100%);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.06) 0%, rgba(255, 140, 0, 0.06) 30%, rgba(192, 192, 192, 0.05) 70%, rgba(255, 69, 0, 0.06) 100%);
   }
 
   .values-grid {
@@ -546,12 +643,12 @@ const breadcrumbData = {
   }
 
   .value-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 231, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 231, 0.9) 50%, rgba(232, 232, 232, 0.9) 100%);
     padding: 2.5rem;
     border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(255, 140, 0, 0.2);
+    border: 1px solid rgba(192, 192, 192, 0.3);
     border-top: 3px solid var(--orange-light);
   }
 
@@ -574,10 +671,11 @@ const breadcrumbData = {
     line-height: 1.75;
     color: var(--text-dark);
     font-size: 0.9375rem;
+    font-weight: 400;
   }
 
   .serve-section {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 248, 231, 0.8) 50%, rgba(255, 240, 220, 0.5) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 248, 231, 0.6) 30%, rgba(232, 232, 232, 0.6) 70%, rgba(255, 240, 220, 0.5) 100%);
   }
 
   .serve-list {
@@ -593,15 +691,15 @@ const breadcrumbData = {
   .serve-list li {
     padding: 1.25rem 2rem;
     margin: 0.875rem 0;
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 140, 0, 0.2) 100%);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 140, 0, 0.15) 50%, rgba(192, 192, 192, 0.12) 100%);
     border-radius: 12px;
     border-left: 3px solid var(--orange-dark);
     font-size: 1.0625rem;
     font-weight: 500;
     transition: all 0.3s ease;
     color: var(--text-dark);
-    border: 1px solid rgba(255, 140, 0, 0.3);
-    box-shadow: 0 2px 8px rgba(255, 140, 0, 0.1);
+    border: 1px solid rgba(192, 192, 192, 0.4);
+    box-shadow: 0 2px 8px rgba(255, 140, 0, 0.08);
   }
 
   .serve-list li:hover {
@@ -612,7 +710,7 @@ const breadcrumbData = {
   }
 
   .different-section {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(255, 140, 0, 0.08) 50%, rgba(255, 69, 0, 0.08) 100%);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.06) 0%, rgba(255, 140, 0, 0.06) 30%, rgba(192, 192, 192, 0.05) 70%, rgba(255, 69, 0, 0.06) 100%);
   }
 
   .different-content {
@@ -649,14 +747,14 @@ const breadcrumbData = {
   .focus-list li {
     padding: 1rem 1.75rem;
     margin: 0.75rem 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 231, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 231, 0.9) 50%, rgba(232, 232, 232, 0.9) 100%);
     border-radius: 12px;
     border-left: 3px solid var(--orange-dark);
     font-size: 1.0625rem;
     font-weight: 500;
     color: var(--text-dark);
-    border: 1px solid rgba(255, 140, 0, 0.2);
-    box-shadow: 0 2px 8px rgba(255, 140, 0, 0.1);
+    border: 1px solid rgba(192, 192, 192, 0.3);
+    box-shadow: 0 2px 8px rgba(255, 140, 0, 0.08);
     transition: all 0.3s ease;
   }
 
@@ -671,7 +769,7 @@ const breadcrumbData = {
     font-size: 1.25rem;
     line-height: 1.75;
     padding: 2.5rem 3rem;
-    background: linear-gradient(135deg, var(--yellow) 0%, var(--orange-light) 100%);
+    background: linear-gradient(135deg, var(--yellow) 0%, var(--orange-light) 50%, var(--silver-light) 100%);
     border-radius: 16px;
     color: var(--text-dark);
     box-shadow: 0 6px 20px rgba(255, 140, 0, 0.25);
@@ -706,6 +804,11 @@ const breadcrumbData = {
       padding: 4rem 1.5rem;
     }
 
+    .about-section {
+      padding-top: 6rem;
+      padding-bottom: 4rem;
+    }
+
     .section-title {
       font-size: 2.25rem;
       margin-bottom: 3rem;
@@ -726,6 +829,12 @@ const breadcrumbData = {
 
     .content-grid {
       gap: 1.5rem;
+      padding: 0 1.5rem;
+    }
+
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
 
     .highlight {
@@ -735,6 +844,172 @@ const breadcrumbData = {
 
     .goal {
       padding: 2rem 1.5rem;
+    }
+
+    .cta-button {
+      padding: 0.875rem 2rem;
+      font-size: 1rem;
+    }
+
+    .contact-form {
+      padding: 0 0.5rem;
+    }
+  }
+
+  .contact-section {
+    background: #1F1520;
+    color: var(--text-light);
+  }
+
+  .contact-title {
+    color: var(--text-light);
+    background: none;
+    -webkit-text-fill-color: var(--text-light);
+  }
+
+  .contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact-intro {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    text-align: left;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 0.9375rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background: #2D3748;
+    border: 2px solid #2D3748;
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #F97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .submit-button {
+    width: 100%;
+    padding: 1rem 2.5rem;
+    background: var(--gradient-sunset);
+    color: var(--text-light);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3);
+  }
+
+  .submit-button:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+    box-shadow: 0 6px 16px rgba(255, 69, 0, 0.4);
+  }
+
+  .submit-button:active {
+    transform: scale(0.98);
+  }
+
+  .contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .contact-item {
+    background: rgba(45, 55, 72, 0.5);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 140, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .contact-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 140, 0, 0.4);
+    background: rgba(45, 55, 72, 0.7);
+  }
+
+  .contact-item h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    letter-spacing: -0.02em;
+  }
+
+  .contact-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.0625rem;
+    font-weight: 400;
+    transition: color 0.2s;
+    display: inline-block;
+    opacity: 0.9;
+  }
+
+  .contact-link:hover {
+    color: #F97316;
+    text-decoration: underline;
+    opacity: 1;
+  }
+
+  .contact-note {
+    color: rgba(248, 250, 252, 0.7);
+    font-size: 0.9375rem;
+    font-style: italic;
+    margin-top: 0.5rem;
+    font-weight: 400;
+  }
+
+  @media (max-width: 768px) {
+    .contact-info {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .contact-item {
+      padding: 1.5rem;
     }
   }
 

@@ -11,13 +11,13 @@ interface Props {
 
 const { 
   title, 
-  description = "Talantongo - The Weight of Your Audience Matters. Transform customer interactions into meaningful, measurable value. We help franchises, retailers, and growing brands understand their audience and build systems that nurture them for life.",
+  description = "Talanton Go - The Weight of Your Audience Matters. Transform customer interactions into meaningful, measurable value. We help franchises, retailers, and growing brands understand their audience and build systems that nurture them for life.",
   canonicalURL = Astro.url,
   ogImage = new URL('/og-image.jpg', Astro.site || Astro.url).href,
   keywords = "customer relationship management, CRM modernization, audience intelligence, lifecycle marketing, franchise solutions, customer retention, marketing automation, customer engagement, retail marketing, franchise marketing"
 } = Astro.props;
 
-const fullTitle = title.includes('Talantongo') ? title : `${title} | Talantongo`;
+const fullTitle = title.includes('Talanton Go') ? title : `${title} | Talanton Go`;
 const siteURL = Astro.site?.href || canonicalURL.toString().replace(Astro.url.pathname, '');
 ---
 
@@ -28,10 +28,10 @@ const siteURL = Astro.site?.href || canonicalURL.toString().replace(Astro.url.pa
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
-    <meta name="author" content="Talantongo" />
+    <meta name="author" content="Talanton Go" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
-    <meta name="theme-color" content="#FF4500" />
+    <meta name="theme-color" content="#000000" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
@@ -44,7 +44,7 @@ const siteURL = Astro.site?.href || canonicalURL.toString().replace(Astro.url.pa
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="Talantongo" />
+    <meta property="og:site_name" content="Talanton Go" />
     <meta property="og:locale" content="en_US" />
     
     <!-- Twitter Card -->
@@ -66,18 +66,18 @@ const siteURL = Astro.site?.href || canonicalURL.toString().replace(Astro.url.pa
     <title>{fullTitle}</title>
   </head>
   <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="header" role="banner">
       <nav class="nav" role="navigation" aria-label="Main navigation">
-        <a href="/" class="logo-link" aria-label="Talantongo Home">
+        <a href="/" class="logo-link" aria-label="Talanton Go Home">
           <Logo />
-          <span class="logo-text">Talantongo</span>
+          <span class="logo-text">Talanton <span class="logo-go">Go</span></span>
         </a>
         <div class="nav-links">
-          <a href="#about" aria-label="About Talantongo">About</a>
+          <a href="#about" aria-label="About Talanton Go">About</a>
           <a href="#services" aria-label="Our Services">Services</a>
           <a href="#philosophy" aria-label="Our Philosophy">Philosophy</a>
           <a href="#values" aria-label="Our Values">Values</a>
+          <a href="#contact" aria-label="Contact Us">Contact</a>
         </div>
       </nav>
     </header>
@@ -85,7 +85,7 @@ const siteURL = Astro.site?.href || canonicalURL.toString().replace(Astro.url.pa
       <slot />
     </main>
     <footer class="footer" role="contentinfo">
-      <p>&copy; 2026 Talantongo. All rights reserved.</p>
+      <p>&copy; 2026 Talanton Go. All rights reserved.</p>
     </footer>
   </body>
 </html>
@@ -103,6 +103,9 @@ const siteURL = Astro.site?.href || canonicalURL.toString().replace(Astro.url.pa
     --orange-medium: #FF7F00;
     --orange-dark: #FF4500;
     --orange-deep: #FF6347;
+    --silver: #C0C0C0;
+    --silver-light: #E8E8E8;
+    --silver-dark: #A8A8A8;
     --text-dark: #1a1a1a;
     --text-light: #ffffff;
     --bg-light: #FFF8E7;
@@ -112,6 +115,7 @@ const siteURL = Astro.site?.href || canonicalURL.toString().replace(Astro.url.pa
     --gray-200: #e5e7eb;
     --gray-700: #374151;
     --gray-900: #111827;
+    --black: #000000;
   }
 
   html {
@@ -167,6 +171,10 @@ const siteURL = Astro.site?.href || canonicalURL.toString().replace(Astro.url.pa
     letter-spacing: -0.03em;
   }
 
+  .logo-go {
+    color: #F97316;
+  }
+
   .nav-links {
     display: flex;
     gap: 2.5rem;
@@ -204,7 +212,7 @@ const siteURL = Astro.site?.href || canonicalURL.toString().replace(Astro.url.pa
   }
 
   .footer {
-    background: linear-gradient(135deg, var(--orange-dark) 0%, var(--orange-deep) 100%);
+    background: var(--black);
     color: var(--text-light);
     text-align: center;
     padding: 3rem 2rem;
@@ -217,35 +225,26 @@ const siteURL = Astro.site?.href || canonicalURL.toString().replace(Astro.url.pa
     opacity: 0.9;
   }
 
-  .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--orange-dark);
-    color: var(--text-light);
-    padding: 8px;
-    text-decoration: none;
-    z-index: 1000;
-  }
-
-  .skip-link:focus {
-    top: 0;
-  }
-
   @media (max-width: 768px) {
     .nav {
-      flex-direction: column;
+      flex-direction: row;
+      justify-content: space-between;
       gap: 1rem;
+    }
+
+    .logo-link {
+      flex-shrink: 0;
+      max-width: calc(100% - 200px);
     }
 
     .nav-links {
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
+      justify-content: flex-end;
+      gap: 0.75rem;
     }
 
     .header {
-      padding: 1rem;
+      padding: 1rem 1.5rem;
     }
   }
 
