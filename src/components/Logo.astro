@@ -1,31 +1,8 @@
 ---
-// Sunrise logo with gradient from yellow/orange (bottom-left) to darker orange (top-right)
-// Bold black capital T in the middle
 ---
 
 <div class="logo">
-  <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Talanton Go Logo">
-    <title>Talanton Go Logo</title>
-    <defs>
-      <linearGradient id="sunrise-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
-        <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
-        <stop offset="50%" style="stop-color:#FF8C00;stop-opacity:1" />
-        <stop offset="100%" style="stop-color:#FF4500;stop-opacity:1" />
-      </linearGradient>
-    </defs>
-    <circle cx="32" cy="32" r="30" fill="url(#sunrise-gradient)" />
-    <text 
-      x="32" 
-      y="44" 
-      font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif" 
-      font-size="38" 
-      font-weight="900" 
-      fill="#000000" 
-      text-anchor="middle"
-      dominant-baseline="middle"
-      letter-spacing="-0.02em"
-    >T</text>
-  </svg>
+  <img src="/navigation-logo.png" alt="Talanton Go Logo" width="64" height="64" />
 </div>
 
 <style>
@@ -35,9 +12,10 @@
     justify-content: center;
   }
   
-  .logo svg {
+  .logo img {
     display: block;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    height: auto;
   }
 </style>
 
